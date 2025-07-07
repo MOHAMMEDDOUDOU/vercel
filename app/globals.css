@@ -1,0 +1,324 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(255, 160, 0, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 160, 0, 0.6);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.6s ease-out;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s infinite;
+}
+
+/* Work Clothes Color Scheme */
+.gradient-primary {
+  background: linear-gradient(135deg, #ffa000 0%, #ff8f00 100%);
+}
+
+.gradient-dark {
+  background: linear-gradient(135deg, #1c1c1c 0%, #2d2d2d 100%);
+}
+
+.gradient-header {
+  background: linear-gradient(135deg, #1c1c1c 0%, #2d2d2d 50%, #1c1c1c 100%);
+}
+
+.gradient-light {
+  background: linear-gradient(135deg, #f8f9fa 0%, #c3c3c3 100%);
+}
+
+/* Glass morphism effect */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Custom button styles */
+.btn-primary {
+  @apply bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300;
+  background: linear-gradient(135deg, #ffa000 0%, #ff8f00 100%);
+}
+
+.btn-secondary {
+  @apply bg-white text-yellow-600 border-2 border-yellow-500 hover:bg-yellow-50 font-semibold py-3 px-6 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300;
+  border-color: #ffa000;
+  color: #ffa000;
+}
+
+/* Card hover effects */
+.card-hover {
+  @apply transform hover:scale-105 hover:shadow-2xl transition-all duration-300;
+}
+
+.product-card {
+  @apply bg-white rounded-2xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 overflow-hidden border border-gray-100;
+}
+
+/* WhatsApp float button */
+.whatsapp-float {
+  position: fixed;
+  width: 70px;
+  height: 70px;
+  bottom: 30px;
+  left: 30px;
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 32px;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  animation: pulse-glow 2s infinite;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 35px rgba(37, 211, 102, 0.5);
+}
+
+/* Loading spinner */
+.loading-spinner {
+  @apply inline-block w-6 h-6 border-2 border-current border-r-transparent rounded-full animate-spin;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #ffa000, #ff8f00);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #ff8f00, #f57c00);
+}
+
+/* Hero section styles */
+.hero-pattern {
+  background-image: radial-gradient(circle at 25% 25%, rgba(255, 160, 0, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(255, 160, 0, 0.1) 0%, transparent 50%);
+}
+
+/* Text gradient */
+.text-gradient {
+  background: linear-gradient(135deg, #ffa000, #ff8f00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Floating elements */
+.floating {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Responsive grid improvements */
+.grid-responsive {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* Modern shadows */
+.shadow-modern {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.shadow-modern-lg {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Work clothes specific styles */
+.work-bg {
+  background-color: #1c1c1c;
+}
+
+.work-secondary {
+  background-color: #2d2d2d;
+}
+
+.work-light {
+  background-color: #c3c3c3;
+}
+
+.work-accent {
+  background-color: #ffa000;
+}
+
+/* Enhanced Responsive Design */
+@media (max-width: 640px) {
+  .hero-pattern {
+    background-size: 200% 200%;
+  }
+
+  .product-card {
+    @apply mx-2;
+  }
+
+  .container {
+    @apply px-3;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .hero-pattern {
+    background-size: 150% 150%;
+  }
+}
+
+/* Improved mobile navigation */
+@media (max-width: 1024px) {
+  .mobile-menu-overlay {
+    @apply fixed inset-0 bg-black/50 z-40;
+  }
+
+  .mobile-menu-content {
+    @apply fixed right-0 top-0 h-full w-80 bg-gray-900 z-50 transform transition-transform duration-300;
+  }
+}
+
+/* Better text scaling */
+@media (max-width: 640px) {
+  h1 {
+    @apply text-2xl;
+  }
+  h2 {
+    @apply text-xl;
+  }
+  h3 {
+    @apply text-lg;
+  }
+  .text-6xl {
+    @apply text-3xl;
+  }
+  .text-5xl {
+    @apply text-2xl;
+  }
+  .text-4xl {
+    @apply text-xl;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .text-6xl {
+    @apply text-4xl;
+  }
+  .text-5xl {
+    @apply text-3xl;
+  }
+}
+
+/* Responsive spacing */
+.responsive-padding {
+  @apply px-4 sm:px-6 lg:px-8;
+}
+
+.responsive-margin {
+  @apply mx-4 sm:mx-6 lg:mx-8;
+}
+
+/* Mobile-first grid system */
+.responsive-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8;
+}
+
+/* Better button sizing */
+@media (max-width: 640px) {
+  .btn-primary,
+  .btn-secondary {
+    @apply py-3 px-4 text-sm;
+  }
+}
