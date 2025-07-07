@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "api/google-auth/route.ts": {
+      "runtime": "vercel-nodejs@2.0.0"
+    }
+  }
+} 
